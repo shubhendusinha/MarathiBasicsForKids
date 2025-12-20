@@ -71,7 +71,7 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
             correctCount = 0
             totalCount = 0
             updateScore()
-            instructionTextView.text = "Press a button to hear the sound"
+            instructionTextView.text = "Press a letter to hear the sound."
         }
 
         val loopButton = view.findViewById<ImageButton>(R.id.loopButton)
