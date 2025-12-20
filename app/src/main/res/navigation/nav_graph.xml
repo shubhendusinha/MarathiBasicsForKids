@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/swarFragment">
+
+    <fragment
+        android:id="@+id/swarFragment"
+        android:name="com.example.learnmarathibysound.SwarFragment"
+        android:label="Swar"
+        tools:layout="@layout/fragment_swar" />
+    <fragment
+        android:id="@+id/aksharFragment"
+        android:name="com.example.learnmarathibysound.AksharFragment"
+        android:label="Akshar"
+        tools:layout="@layout/fragment_akshar" />
+    <fragment
+        android:id="@+id/swarakshareFragment"
+        android:name="com.example.learnmarathibysound.SwarakshareFragment"
+        android:label="Sandhi"
+        tools:layout="@layout/fragment_swarakshare" />
+</navigation>
