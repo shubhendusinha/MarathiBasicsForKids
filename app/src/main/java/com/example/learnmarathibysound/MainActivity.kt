@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         // Create and apply text-based icons
         bottomNavView.menu.findItem(R.id.swarFragment).icon = createTextIcon("स्वर")
-        bottomNavView.menu.findItem(R.id.aksharFragment).icon = createTextIcon("अक्षरे")
+        bottomNavView.menu.findItem(R.id.aksharFragment).icon = createTextIcon("व्यंजने")
         bottomNavView.menu.findItem(R.id.swarakshareFragment).icon = createTextIcon("स्वराक्षरे")
     }
 
