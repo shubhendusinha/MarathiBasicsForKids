@@ -60,18 +60,18 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
         instructionTextView = view.findViewById(R.id.instructionTextView)
         scoreTextView = view.findViewById(R.id.scoreTextView)
 
-        val testButton = view.findViewById<Button>(R.id.testButton)
+        val testButton = view.findViewById<ImageButton>(R.id.testButton)
         testButton.setOnClickListener {
             startTest()
         }
 
-        val resetButton = view.findViewById<Button>(R.id.resetButton)
+        val resetButton = view.findViewById<ImageButton>(R.id.resetButton)
         resetButton.setOnClickListener {
             isTestMode = false
             correctCount = 0
             totalCount = 0
             updateScore()
-            instructionTextView.text = "Click on a letter to hear it's sound."
+            instructionTextView.text = "Press a button to hear the sound"
         }
 
         val loopButton = view.findViewById<ImageButton>(R.id.loopButton)

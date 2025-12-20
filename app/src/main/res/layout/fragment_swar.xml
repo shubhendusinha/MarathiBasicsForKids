@@ -44,12 +44,26 @@
         android:gravity="bottom|center_horizontal"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/testButton"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Test" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/testButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Start Quiz"
+                android:src="@android:drawable/ic_menu_help" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quiz"
+                android:textColor="#333333" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -63,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="Repeat Sound"
-                android:src="@android:drawable/ic_menu_rotate" />
+                android:src="@android:drawable/ic_lock_silent_mode_off" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,12 +86,26 @@
                 android:textColor="#333333" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/resetButton"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="Reset" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Reset Quiz"
+                android:src="@android:drawable/ic_menu_rotate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:textColor="#333333" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
