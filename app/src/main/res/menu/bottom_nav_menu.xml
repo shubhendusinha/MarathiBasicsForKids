@@ -3,12 +3,12 @@
 
     <item
         android:id="@id/swarFragment"
-        android:title="Swar" />
+        android:title="Vowels" />
     <item
         android:id="@id/aksharFragment"
         android:title="Letters" />
     <item
-        android:id="@id/swarakshareFragment"
-        android:title="Swarakshare" />
+        android:id="@id/akadeFragment"
+        android:title="Numbers" />
 
 </menu>

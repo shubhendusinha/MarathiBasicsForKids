@@ -16,8 +16,8 @@
         android:label="Akshar"
         tools:layout="@layout/fragment_akshar" />
     <fragment
-        android:id="@+id/swarakshareFragment"
-        android:name="com.example.learnmarathibysound.SwarakshareFragment"
+        android:id="@+id/akadeFragment"
+        android:name="com.example.learnmarathibysound.AkadeFragment"
         android:label="Sandhi"
-        tools:layout="@layout/fragment_swarakshare" />
+        tools:layout="@layout/fragment_akade" />
 </navigation>
