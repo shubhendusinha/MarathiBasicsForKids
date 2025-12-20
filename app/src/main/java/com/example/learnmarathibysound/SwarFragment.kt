@@ -2,6 +2,8 @@ package com.example.learnmarathibysound
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.util.TypedValue
@@ -10,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
@@ -18,6 +21,9 @@ import java.util.*
 class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
 
     private var tts: TextToSpeech? = null
+    private var isTestMode = false
+    private var currentTestVowel: String? = null
+    private lateinit var instructionTextView: TextView
 
     private val vowelsMap = linkedMapOf(
         "अ" to "अ",
@@ -39,7 +45,6 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_swar, container, false)
     }
 
@@ -47,6 +52,19 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
         super.onViewCreated(view, savedInstanceState)
 
         tts = TextToSpeech(requireContext(), this)
+        instructionTextView = view.findViewById(R.id.instructionTextView)
+
+        val testButton = view.findViewById<Button>(R.id.testButton)
+        testButton.setOnClickListener {
+            startTest()
+        }
+
+        val resetButton = view.findViewById<Button>(R.id.resetButton)
+        resetButton.setOnClickListener {
+            isTestMode = false
+            instructionTextView.text = "Press a swar to hear the sound"
+        }
+
         setupKeypad(view)
     }
 
@@ -55,11 +73,11 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
 
         for ((displayChar, phoneticText) in vowelsMap) {
             val button = Button(requireContext())
-
             button.text = displayChar
             button.textSize = 32f
             button.setTextColor(Color.WHITE)
-            button.setBackgroundColor("#6200EE".toColorInt()) // Purple buttons
+            val originalColor = "#6200EE".toColorInt()
+            button.setBackgroundColor(originalColor)
 
             val params = GridLayout.LayoutParams()
             params.width = dpToPx(100)
@@ -68,10 +86,40 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
             button.layoutParams = params
 
             button.setOnClickListener {
-                speakChar(phoneticText)
+                if (isTestMode) {
+                    if (displayChar == currentTestVowel) {
+                        blink(button, Color.GREEN, originalColor)
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            startTest()
+                        }, 500) // Start next round after a short delay
+                    } else {
+                        blink(button, Color.RED, originalColor)
+                    }
+                } else {
+                    speakChar(phoneticText)
+                }
             }
             gridLayout.addView(button)
         }
+    }
+
+    private fun startTest() {
+        isTestMode = true
+        val randomVowel = vowelsMap.keys.random()
+        currentTestVowel = randomVowel
+
+        val phoneticText = vowelsMap[randomVowel]
+        if (phoneticText != null) {
+            speakChar(phoneticText)
+            instructionTextView.text = "Listen... What swar did you hear?"
+        }
+    }
+
+    private fun blink(button: Button, color: Int, originalColor: Int) {
+        button.setBackgroundColor(color)
+        Handler(Looper.getMainLooper()).postDelayed({
+            button.setBackgroundColor(originalColor)
+        }, 500)
     }
 
     private fun speakChar(phoneticText: String) {
@@ -82,7 +130,6 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
             val result = tts!!.setLanguage(Locale("mr-IN"))
-
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "Language not supported")
                 Toast.makeText(requireContext(), "Marathi Voice Pack Missing on Phone", Toast.LENGTH_LONG).show()
