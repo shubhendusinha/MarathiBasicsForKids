@@ -8,16 +8,16 @@
     <fragment
         android:id="@+id/swarFragment"
         android:name="com.example.learnmarathibysound.SwarFragment"
-        android:label="Swar"
+        android:label="Vowels"
         tools:layout="@layout/fragment_swar" />
     <fragment
         android:id="@+id/aksharFragment"
         android:name="com.example.learnmarathibysound.AksharFragment"
-        android:label="Akshar"
+        android:label="Letters"
         tools:layout="@layout/fragment_akshar" />
     <fragment
         android:id="@+id/akadeFragment"
         android:name="com.example.learnmarathibysound.AkadeFragment"
-        android:label="Sandhi"
+        android:label="Numbers"
         tools:layout="@layout/fragment_akade" />
 </navigation>
