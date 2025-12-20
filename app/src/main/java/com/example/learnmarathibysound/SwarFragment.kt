@@ -24,6 +24,10 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
     private var isTestMode = false
     private var currentTestVowel: String? = null
     private lateinit var instructionTextView: TextView
+    private lateinit var scoreTextView: TextView
+
+    private var correctCount = 0
+    private var totalCount = 0
 
     private val vowelsMap = linkedMapOf(
         "अ" to "अ",
@@ -53,6 +57,7 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
 
         tts = TextToSpeech(requireContext(), this)
         instructionTextView = view.findViewById(R.id.instructionTextView)
+        scoreTextView = view.findViewById(R.id.scoreTextView)
 
         val testButton = view.findViewById<Button>(R.id.testButton)
         testButton.setOnClickListener {
@@ -62,10 +67,14 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
         val resetButton = view.findViewById<Button>(R.id.resetButton)
         resetButton.setOnClickListener {
             isTestMode = false
-            instructionTextView.text = "Press a swar to hear the sound"
+            correctCount = 0
+            totalCount = 0
+            updateScore()
+            instructionTextView.text = "Press a button to hear the sound"
         }
 
         setupKeypad(view)
+        updateScore()
     }
 
     private fun setupKeypad(view: View) {
@@ -87,14 +96,19 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
 
             button.setOnClickListener {
                 if (isTestMode) {
+                    totalCount++
                     if (displayChar == currentTestVowel) {
+                        correctCount++
                         blink(button, Color.GREEN, originalColor)
+                        blinkScoreBackground(Color.GREEN)
                         Handler(Looper.getMainLooper()).postDelayed({
                             startTest()
                         }, 500) // Start next round after a short delay
                     } else {
                         blink(button, Color.RED, originalColor)
+                        blinkScoreBackground(Color.RED)
                     }
+                    updateScore()
                 } else {
                     speakChar(phoneticText)
                 }
@@ -111,14 +125,25 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
         val phoneticText = vowelsMap[randomVowel]
         if (phoneticText != null) {
             speakChar(phoneticText)
-            instructionTextView.text = "Listen... What swar did you hear?"
+            instructionTextView.text = "Listen... What vowel did you hear?"
         }
+    }
+
+    private fun updateScore() {
+        scoreTextView.text = "$correctCount/$totalCount"
     }
 
     private fun blink(button: Button, color: Int, originalColor: Int) {
         button.setBackgroundColor(color)
         Handler(Looper.getMainLooper()).postDelayed({
             button.setBackgroundColor(originalColor)
+        }, 500)
+    }
+
+    private fun blinkScoreBackground(color: Int) {
+        scoreTextView.setBackgroundColor(color)
+        Handler(Looper.getMainLooper()).postDelayed({
+            scoreTextView.setBackgroundResource(R.drawable.score_background)
         }, 500)
     }
 
