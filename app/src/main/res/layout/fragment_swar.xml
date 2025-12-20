@@ -38,26 +38,39 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Test" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:gravity="bottom|center_horizontal"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/loopButton"
+        <Button
+            android:id="@+id/testButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:contentDescription="Repeat Sound"
-            android:src="@android:drawable/ic_menu_rotate" />
+            android:text="Test" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/loopButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Repeat Sound"
+                android:src="@android:drawable/ic_menu_rotate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repeat"
+                android:textColor="#333333" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/resetButton"
@@ -66,16 +79,30 @@
             android:layout_marginEnd="16dp"
             android:text="Reset" />
 
-        <TextView
-            android:id="@+id/scoreTextView"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/score_background"
-            android:padding="8dp"
-            android:text="0/0"
-            android:textColor="#333333"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/scoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/score_background"
+                android:padding="8dp"
+                android:text="0/0"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score"
+                android:textColor="#333333" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
