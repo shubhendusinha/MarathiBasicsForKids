@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.graphics.toColorInt
@@ -70,7 +71,17 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
             correctCount = 0
             totalCount = 0
             updateScore()
-            instructionTextView.text = "Press a button to hear the sound"
+            instructionTextView.text = "Click on a letter to hear it's sound."
+        }
+
+        val loopButton = view.findViewById<ImageButton>(R.id.loopButton)
+        loopButton.setOnClickListener {
+            if (isTestMode && currentTestVowel != null) {
+                val phoneticText = vowelsMap[currentTestVowel]
+                if (phoneticText != null) {
+                    speakChar(phoneticText)
+                }
+            }
         }
 
         setupKeypad(view)
@@ -125,7 +136,7 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
         val phoneticText = vowelsMap[randomVowel]
         if (phoneticText != null) {
             speakChar(phoneticText)
-            instructionTextView.text = "Listen... What vowel did you hear?"
+            instructionTextView.text = "What letter do you hear?"
         }
     }
 
