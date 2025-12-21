@@ -1,4 +1,4 @@
-package com.example.learnmarathibysound
+package com.example.marathibasicsforkids
 
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable

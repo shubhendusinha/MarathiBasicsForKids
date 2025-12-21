@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/swarFragment"
-        android:name="com.example.learnmarathibysound.SwarFragment"
+        android:name="marathibasicsforkids.SwarFragment"
         android:label="Vowels"
         tools:layout="@layout/fragment_swar" />
     <fragment
         android:id="@+id/aksharFragment"
-        android:name="com.example.learnmarathibysound.AksharFragment"
+        android:name="marathibasicsforkids.AksharFragment"
         android:label="Letters"
         tools:layout="@layout/fragment_akshar" />
     <fragment
         android:id="@+id/akadeFragment"
-        android:name="com.example.learnmarathibysound.AkadeFragment"
+        android:name="marathibasicsforkids.AkadeFragment"
         android:label="Numbers"
         tools:layout="@layout/fragment_akade" />
 </navigation>

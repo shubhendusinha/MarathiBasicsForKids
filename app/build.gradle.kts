@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.learnmarathibysound"
+    namespace = "com.example.marathibasicsforkids"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.learnmarathibysound"
+        applicationId = "com.example.marathibasicsforkids"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
