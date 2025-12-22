@@ -17,6 +17,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
+import com.example.marathibasicsforkids.R
 import java.util.*
 
 class AkadeFragment : Fragment(), TextToSpeech.OnInitListener {

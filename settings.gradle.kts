@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LearnMarathiBySound"
+rootProject.name = "MarathiBasicsForKids"
 include(":app")

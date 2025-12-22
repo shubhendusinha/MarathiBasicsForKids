@@ -17,6 +17,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
+import com.example.marathibasicsforkids.R
 import java.util.*
 
 class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
@@ -165,10 +166,15 @@ class SwarFragment : Fragment(), TextToSpeech.OnInitListener {
 
     override fun onInit(status: Int) {
         if (status == TextToSpeech.SUCCESS) {
-            val result = tts!!.setLanguage(Locale("mr-IN"))
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.e("TTS", "Language not supported")
-                Toast.makeText(requireContext(), "Marathi Voice Pack Missing on Phone", Toast.LENGTH_LONG).show()
+            try {
+                val result = tts!!.setLanguage(Locale("mr", "IN"))
+                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Language not supported")
+                    Toast.makeText(requireContext(), "Marathi Voice Pack Missing on Phone", Toast.LENGTH_LONG).show()
+                }
+            } catch (e: Exception) {
+                Log.e("TTS", "Error setting language", e)
+                Toast.makeText(requireContext(), "Error initializing TTS language", Toast.LENGTH_LONG).show()
             }
         } else {
             Log.e("TTS", "Initialization Failed")
