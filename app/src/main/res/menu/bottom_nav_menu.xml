@@ -5,4 +5,8 @@
         android:id="@+id/lesson1Fragment"
         android:title="धडा १" />
 
+    <item
+        android:id="@+id/lesson2Fragment"
+        android:title="धडा २" />
+
 </menu>

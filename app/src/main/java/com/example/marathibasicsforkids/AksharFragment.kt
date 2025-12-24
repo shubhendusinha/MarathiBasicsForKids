@@ -100,8 +100,8 @@ class AksharFragment : Fragment(), TextToSpeech.OnInitListener {
             button.setBackgroundColor(originalColor)
 
             val params = GridLayout.LayoutParams()
-            params.width = dpToPx(60) // Smaller buttons for a 5-column layout
-            params.height = dpToPx(60)
+            params.width = dpToPx(55) // Smaller buttons for a 5-column layout
+            params.height = dpToPx(55)
             params.setMargins(4, 4, 4, 4)
             button.layoutParams = params
 

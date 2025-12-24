@@ -25,11 +25,16 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavView.setupWithNavController(navController)
         bottomNavView.menu.findItem(R.id.lesson1Fragment).icon = createTextIcon("Les1")
+        bottomNavView.menu.findItem(R.id.lesson2Fragment).icon = createTextIcon("Les2")
 
         bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.lesson1Fragment -> {
                     navController.navigate(R.id.lesson1Fragment)
+                    true
+                }
+                R.id.lesson2Fragment -> {
+                    navController.navigate(R.id.lesson2Fragment)
                     true
                 }
                 else -> false
