@@ -14,13 +14,13 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:text="Marathi Akade (Numbers)"
             android:textColor="#333333"
             android:textSize="20sp"
