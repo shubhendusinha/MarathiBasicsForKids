@@ -3,6 +3,6 @@
 
     <item
         android:id="@+id/lesson1Fragment"
-        android:title="धडा १ (Les1)" />
+        android:title="धडा १" />
 
 </menu>

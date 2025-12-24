@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/lesson1Fragment"
         android:name="com.example.marathibasicsforkids.Lesson1Fragment"
-        android:label="धडा १ (Les1)"
+        android:label="धडा १"
         tools:layout="@layout/fragment_lesson_1" />
 
     <fragment
