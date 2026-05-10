@@ -4,16 +4,15 @@
 # Marathi Basics for Kids
 
 This is a hobby project. My mother tongue is Marathi. [Marathi](https://en.wikipedia.org/wiki/Marathi_language) is one of the Indian classical language that is spoken by ~83 Million people.
-I created this Android application to help teach Marathi to my 7 year old daughter. We live outside India where teaching native Indian language is only possible at home.
-Hence the motivation for this application. My aim is that my daughter should be able to both read and write simple marathi words in original Devnagiri script.
+I created this Android application to help teach read and write Marathi in devnagiri to my 7 year old daughter.
 
 ## Concept
  
 The goal is to learn language as a kid. That is:
-- By listening sounds (uses google text to speech)
+- By listening to sounds (uses google text to speech)
 - Recognizing letters, numbers in devnagiri script
 - Trying reading and writing
-- Some quiz that tracks points for rewards
+- Quiz that tracks points or score
 
 ## Screenshots
 
