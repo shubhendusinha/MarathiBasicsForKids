@@ -41,5 +41,5 @@ The goal is to learn language as a kid. That is:
 
 Since this is a hobby draft project, it is not on google playstore yet.
 If you want to try the app, please contact me : 
-_sinhashubhendu1_ [at) _gmail_ (dot] _com_ 
+**sinha(dot)shubhendu(dot)1** [attherate) _gmail_ (dot] **_com_** 
 
