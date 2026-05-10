@@ -4,7 +4,7 @@
 # Marathi Basics for Kids
 
 This is a hobby project. My mother tongue is Marathi. [Marathi](https://en.wikipedia.org/wiki/Marathi_language) is one of the Indian classical language that is spoken by ~83 Million people.
-I created this Android application to help teach read and write Marathi in devnagiri to my 7 year old daughter.
+I created this Android application to help teach read and write Marathi in devnagiri script to my 7 year old daughter.
 
 ## Concept
  
