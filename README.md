@@ -15,6 +15,17 @@ The goal is to learn language as a kid. That is:
 - Trying reading and writing
 - Some quiz that tracks points for rewards
 
+## Screenshots
+
+### Alphabet (Vowels) on Phone
+<img src="images/phone-akshar.jpg" width="400"/>
+
+### Alphabet (Letters) on Phone
+<img src="images/phone-letters.jpg" width="400"/>
+
+### Alphabet (Numbers) on Phone
+<img src="images/phone-numbers.jpg" width="400"/>
+
 ## Features
 
 ### InProgress
@@ -31,15 +42,4 @@ The goal is to learn language as a kid. That is:
 Since this is a hobby draft project, it is not on google playstore yet.
 If you want to try the app, please contact me : 
 _sinhashubhendu1_ [at) _gmail_ (dot] _com_ 
-
-## Screenshots
-
-### Alphabet (Vowels) on Phone
-<img src="images/phone-akshar.jpg" width="400"/>
-
-### Alphabet (Letters) on Phone
-<img src="images/phone-letters.jpg" width="400"/>
-
-### Alphabet (Numbers) on Phone
-<img src="images/phone-numbers.jpg" width="400"/>
 
